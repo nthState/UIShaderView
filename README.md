@@ -23,12 +23,14 @@ This is a UIView subclass that allows you to apply shaders to your UIView compon
 		override func viewDidLoad() {
 			super.viewDidLoad()
 
-			shaderView.debugEnabledCameraControl = true
+			// Debug if required
+			shaderView.debugEnableCameraControl = true
 			shaderView.debugEnableDefaultLights = true
 
 			shaderView.addShaderFromFile(.LightingModel, shader: "sm_light")
 			shaderView.addShaderFromFile(.Geometry, shader: "sm_geom")
 		
+			// Assign a texture if you wish
 			let texture:UIImage = UIImage(named: "texture")!
 			shaderView.addTexture(texture)
 		

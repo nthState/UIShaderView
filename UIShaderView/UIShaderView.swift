@@ -118,9 +118,9 @@ class UIShaderView : UIView
     
     :param: true/false
     */
-    var debugEnabledCameraControl:Bool = false {
+    var debugEnableCameraControl:Bool = false {
         didSet {
-            sceneView.allowsCameraControl = debugEnabledCameraControl
+            sceneView.allowsCameraControl = debugEnableCameraControl
         }
     }
     

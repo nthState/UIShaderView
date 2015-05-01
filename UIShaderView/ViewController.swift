@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        shaderView.debugEnabledCameraControl = true
+        shaderView.debugEnableCameraControl = true
         shaderView.debugEnableDefaultLights = true
 
         shaderView.addShaderFromFile(.LightingModel, shader: "sm_light")
