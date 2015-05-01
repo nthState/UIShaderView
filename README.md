@@ -8,7 +8,7 @@ This is a UIView subclass that allows you to apply shaders to your UIView compon
 
 **What it looks like**
 
-![My image](blah.jpg)
+![UIShaderView Screenshot](UIShaderViewScreenshot.png)
 
 **How to use**
 
