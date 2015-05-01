@@ -15,30 +15,29 @@ This is a UIView subclass that allows you to apply shaders to your UIView compon
 
 
     import UIKit
-    
-    class ViewController: UIViewController {
-    
-    	// Have an outlet, or create a view programmatically
-    	@IBOutlet var shaderView:UIShaderView!
-    
-    	override func viewDidLoad()
-    	{
-            super.viewDidLoad()
-    		//Debug always helps
-    		shaderView.debugCameraControl = true
-    
-    		//Load in shaders to use
-    		shaderView.addShaderFromFile(.LightingModel, shader: "sm_light")
-    		shaderView.addShaderFromFile(.Geometry, shader: "sm_wobble")
-    	
-    		//Optionally screenshot the view and pass that to the shader as a texture  
-    		shaderView.screenshotAndApplyToShader()
-    	
-    		//Animate some shader uniform values
-    		shaderView.setShaderValueForKey(30.0, forKey: "Amplitude")
-    	}
-    
-    }
+
+	class ViewController: UIViewController {
+
+		@IBOutlet var shaderView:UIShaderView!
+	
+		override func viewDidLoad() {
+			super.viewDidLoad()
+
+			shaderView.debugEnabledCameraControl = true
+			shaderView.debugEnableDefaultLights = true
+
+			shaderView.addShaderFromFile(.LightingModel, shader: "sm_light")
+			shaderView.addShaderFromFile(.Geometry, shader: "sm_geom")
+		
+			let texture:UIImage = UIImage(named: "texture")!
+			shaderView.addTexture(texture)
+		
+			shaderView.setShaderValueForKey(30.0, forKey: "Amplitude")
+		
+		}
+
+	}
+
 
 
 **Thoughts**
